@@ -7,6 +7,7 @@ class User extends CI_Controller {
   {
     parent:: __construct();
     check_not_login();
+    check_admin();
     $this->load->model('user_m');
     $this->load->library('form_validation');
   }
@@ -43,7 +44,7 @@ class User extends CI_Controller {
       $this->user_m->add($post);
       if($this->db->affected_rows() > 0)
       {
-        echo "<script>alert('Data berhasil disimpan)</script>";
+        echo "<script>alert('Data berhasil disimpan')</script>";
       }
       echo "<script>window.location='".site_url('user')."';</script>";
     }
@@ -80,14 +81,14 @@ class User extends CI_Controller {
         $data['row'] = $query->row();
         $this->template->load('template', 'user/user_form_edit', $data);
       } else {
-        echo "<script>alert('Data tidak ditemukan)</script>";
+        echo "<script>alert('Data tidak ditemukan')</script>";
         echo "<script>window.location='".site_url('user')."';</script>";
       }
     } else {
       $post = $this->input->post(null, TRUE);
       $this->user_m->edit($post);
       if($this->db->affected_rows() > 0) {
-        echo "<script>alert('Data berhasil disimpan)</script>";
+        echo "<script>alert('Data berhasil disimpan')</script>";
       }
       echo "<script>window.location='".site_url('user')."';</script>";
     }
@@ -116,7 +117,7 @@ class User extends CI_Controller {
 
     if($this->db->affected_rows() > 0)
       {
-        echo "<script>alert('Data berhasil dihapus)</script>";
+        echo "<script>alert('Data berhasil dihapus')</script>";
       }
       echo "<script>window.location='".site_url('user')."';</script>";
   }

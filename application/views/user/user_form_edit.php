@@ -62,7 +62,9 @@
               <button type="submit" class="btn btn-success">
                 <i class="fa fa-paper-plane"></i> Save
               </button>
-              <button type="reset" class="btn btn-danger">Reset</button>
+              <button type="reset" class="btn btn-danger">
+                <i class="fa fa-undo"></i> Reset
+              </button>
             </div>
           </form>
         </div>
