@@ -4,6 +4,7 @@
   </h1>
   <ol class="breadcrumb">
     <li><a href="#"><i class="fa fa-dashboard"></i></a></li>
+    <li class="active">Products</li>
     <li class="active">Items</li>
   </ol>
 </section>
@@ -29,17 +30,23 @@
             <th>Category</th>
             <th>Unit</th>
             <th>Price</th>
-            <th>Image</th>
             <th>Stock</th>
+            <th>Image</th>
             <th>Actions</th>
           </tr>
         </thead>
         <tbody>
-          <?php $no = 1;
+          <!-- <?php $no = 1;
           foreach($row->result() as $key => $data) { ?>
           <tr>
             <td style="width:5%;"><?=$no++?></td>
-            <td><?=$data->barcode?></td>
+            <td>
+              <?=$data->barcode?>
+              <br>
+              <a href="<?=site_url('item/barcode_qrcode/'.$data->item_id)?>" class="btn btn-default btn-xs">
+                Generate <i class="fa fa-barcode"></i> <i class="fa fa-qrcode"></i>
+              </a>
+            </td>
             <td><?=$data->name?></td>
             <td><?=$data->category_name?></td>
             <td><?=$data->unit_name?></td>
@@ -60,10 +67,37 @@
             </td>
           </tr>
           <?php
-          } ?>
+          } ?> -->
         </tbody>
       </table>
     </div>
   </div>
 
 </section>
+
+<script>
+  $(document).ready(function() {
+    $('#table1').DataTable({
+      "processing" : true,
+      "serverSide" : true,
+      "ajax" : {
+        "url" : "<?=site_url('item/get_ajax')?>",
+        "type" : "POST"
+      },
+      "columnDefs": [
+        {
+          "targets": [5,6],
+          "className": 'text-right'
+        },
+        {
+          "targets": [7,8],
+          "className": 'text-center'
+        },
+        {
+          "targets": [0,7,8],
+          "orderable": false
+        }
+      ]
+    })
+  })
+</script>

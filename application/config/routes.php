@@ -54,3 +54,7 @@ $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
 
 $route['product/(:any)'] = 'catalog/product_lookup';
+
+
+$route['stock/in'] = 'stock/stock_in_data';
+$route['stock/in/add'] = 'stock/stock_in_add';
