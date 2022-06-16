@@ -157,7 +157,7 @@
 							<span class="pull-right-container"><i class="fa fa-angle-left pull-right"></i></span>
 						</a>
 						<ul class="treeview-menu">
-							<li <?=$this->uri->segment(1) == 'sales' ? 'class="active"' : ''?>>
+							<li <?=$this->uri->segment(1) == 'sales' ? 'class="active"' : ''?> disabled>
 								<a href="#">
 									<i class="fa fa-circle-o"></i> Sales
 								</a>
@@ -167,7 +167,9 @@
 									<i class="fa fa-circle-o"></i> Stock In
 								</a>
 							</li>
-							<li <?=$this->uri->segment(1) == 'stock_out' ? 'class="active"' : ''?>><a href="#"><i class="fa fa-circle-o"></i> Stock Out</a></li>
+							<li <?=$this->uri->segment(1) == 'stock_out' ? 'class="active"' : ''?>>
+								<a href="<?=site_url('stock/out')?>">
+									<i class="fa fa-circle-o"></i> Stock Out</a></li>
 						</ul>
 					</li>
 					<li class="treeview">

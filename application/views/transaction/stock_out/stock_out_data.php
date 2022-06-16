@@ -1,11 +1,11 @@
 <section class="content-header">
-  <h1>Stock In
+  <h1>Stock Out
     <small></small>
   </h1>
   <ol class="breadcrumb">
     <li><a href="#"><i class="fa fa-dashboard"></i></a></li>
     <li class="active">Transaction</li>
-    <li class="active">Stock In</li>
+    <li class="active">Stock Out</li>
   </ol>
 </section>
 
@@ -15,8 +15,8 @@
     <div class="box-header">
       <h3 class="box-title">Barang masuk / Pembelian</h3>
       <div class="pull-right">
-        <a href="<?=site_url('stock/in/add')?>" class="btn btn-primary">
-          <i class="fa fa-plus"></i> Add Stock In
+        <a href="<?=site_url('stock/out/add')?>" class="btn btn-primary">
+          <i class="fa fa-plus"></i> Add Stock Out
         </a>
       </div>
     </div>
@@ -52,7 +52,7 @@
                 data-date="<?=indo_date($data->date)?>">
                   <i class="fa fa-eye"></i>Details
                 </a>
-                <a href="<?=site_url('stock/in/del/'.$data->stock_id.'/'.$data->item_id)?>" onclick="return confirm('Apakah yakin hapus data?')" class="btn btn-danger btn-xs">
+                <a href="<?=site_url('stock/out/del/'.$data->stock_id.'/'.$data->item_id)?>" onclick="return confirm('Apakah yakin hapus data?')" class="btn btn-danger btn-xs">
                   <i class="fa fa-trash"></i>Delete
                 </a>
             </td>
@@ -73,7 +73,7 @@
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true" >&times;</span>
         </button>
-        <h4 class="modal-title">Stock In Detail</h4>
+        <h4 class="modal-title">Stock Out Detail</h4>
       </div>
       <div class="modal-body table-responsive">
           <table class="table table-bordered no-margin">
